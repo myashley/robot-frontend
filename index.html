@@ -9,10 +9,10 @@
 
     <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     
     <link rel="stylesheet" href="/assets/robot.css">
-    <script src="/assets/index.js"></script>
+    <script defer src="/assets/index.js"></script>
     <script>
             $(document).ready(function(){
                 $('select').formSelect();
@@ -28,19 +28,18 @@
 
 
                 <div class="row">
-                    <form class="col s6" name="robotForm">
+                    <form class="col s6" name="robotForm" action="/robots">
 
                         <div class="row">
                                 <div class="input-field col s12">
-                                <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-                                <label for="first_name">Robot Name</label>
+                                <input placeholder="Robot name" id="robotName" name="robotName" type="text" class="validate">
+                                <label for="robotName">Robot Name</label>
                                 </div>
                         </div>
                       
                         <div class="row">
                                 <div class="input-field col s12">
-                                        <select>
-                                          <option value="" disabled selected>Choose your robot type</option>
+                                        <select name="robotType">
                                           <option value="cat" selected>Cat</option>
                                           <option value="dog">Dog</option>
                                           <option value="boy">Boy</option>
@@ -52,7 +51,7 @@
 
                         <div class="row">
                                 <div class="input-field col s12">
-                                        <select>
+                                        <select name="bodyColour">
                                           <option value="red" selected>Red</option>
                                           <option value="orange">Orange</option>
                                           <option value="yellow">Yellow</option>
@@ -67,7 +66,7 @@
 
                         <div class="row">
                                 <div class="input-field col s12">
-                                        <select>
+                                        <select name="faceColour">
                                           <option value="red" selected>Red</option>
                                           <option value="orange">Orange</option>
                                           <option value="yellow">Yellow</option>
@@ -82,7 +81,7 @@
                         
                         <div class="row">
                                 <div class="input-field col s12">
-                                        <select>
+                                        <select name="highlightColour">
                                           <option value="red" selected>Red</option>
                                           <option value="orange">Orange</option>
                                           <option value="yellow">Yellow</option>
@@ -97,7 +96,7 @@
                         
                         <div class="row">
                                 <div class="input-field col s12">
-                                        <select>
+                                        <select name="personality">
                                           <option value="loyal" selected>Loyal</option>
                                           <option value="rebellious">Rebellious</option>
                                           <option value="surprise">Surprise</option>
@@ -108,9 +107,13 @@
                         
                         <div class="row">
                                 <div class="input-field col s12">
-                                <input placeholder="Placeholder" id="message" type="text" class="validate">
+                                <input placeholder="Message" id="message" type="text" class="validate">
                                 <label for="message">Message</label>
                                 </div>
+                        </div>
+
+                        <div class="input-field col s12">
+                                <input type="submit" name="submit" id="submit" class="waves-effect waves-light btn">
                         </div>
 
 
